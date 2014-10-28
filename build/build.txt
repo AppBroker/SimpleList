@@ -5,5 +5,13 @@ stylesheet/style.css
 
 js/main.js
 ----------------
-js/app.js
+js/model/Item.js
+js/model/ObserverList.js
+js/controller/Subject.js
+js/controller/IObserver.js
+js/view/SimpleListAddView.js
+js/view/SimpleRowView.js
+js/view/SimpleListCountView.js
+js/model/Model.js
+js/App.js
 js/main.js
