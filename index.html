@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Simplelist : A user inputs an item into the text field, which is then added to the list on  clicking ‘Add’.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Simplelist</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/AppBroker/SimpleList">View on GitHub</a>
+
+          <h1 id="project_title">Simplelist</h1>
+          <h2 id="project_tagline">A user inputs an item into the text field, which is then added to the list on  clicking ‘Add’.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/AppBroker/SimpleList/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/AppBroker/SimpleList/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="simple-list-setup" class="anchor" href="#simple-list-setup"><span class="octicon octicon-link"></span></a>Simple List Setup</h3>
+
+<p>The source for the task is located inside: </p>
+
+<p>\SimpleList\public\js</p>
+
+<p>Testing folder located inside:</p>
+
+<p>\SimpleList\test</p>
+
+<p>The server currently redirects to build folder for running built project as the node js:</p>
+
+<p>\SimpleList\build </p>
+
+<p>so if you would like to run the files yourselves keep that in mind.
+I usually wouldn't push up the build folder to the repository but for ease of running through it I've included it for now.</p>
+
+<p>I have included the server file I used for SimpleList as well inside:
+\SimpleList\server</p>
+
+<p>To keep things simple Ive not included any less/sass/grunt files that are usually in my build env</p>
+
+<p>Source Files Included:</p>
+
+<p>Main.js
+Entry module, required initially by requirejs</p>
+
+<p>Model.js
+For the purpose of this task Im retrieving the values from local storage
+Im also only sending the values to local json storage 
+when the page unloads at the moment in order to send and load the data once. 
+In most cases with and existing service for the model I'd likely load 
+once &amp; send it instantly. This created dual scenarios where the model deals with real time
+data such as new rows added during run time and the stored data seperately.
+Theres also a scenario of storing existing rows in the model, ultimately I would have tied this 
+all to addItem/Remove Item.</p>
+
+<p>IObserver.js
+Sudo JS Interface wrapper module that the view components 
+inherit in order inherit update method called from the pattern.</p>
+
+<p>SimpleListAddView.js
+This class creates &amp; renders most of the view components
+I would normally use templates here for the view components time permitting, 
+There are also string values which should ultimately be stored in a model 
+or constant variable. The two methods at the bottom should be swapped to getters instead.</p>
+
+<p>SimpleListCountView.js
+A binding example below appropriately binds the view &amp; data together
+for the change/update from the Observer pattern </p>
+
+<p>SimpleRowView.js
+This is the view for a single row, consisting of li &amp; Button HTML
+The component has the ability to remove itself from its parent</p>
+
+<p>App.js
+Module implementing the Observer pattern Stores &amp; Retrieves its data locally on the 
+browser using JSON. Brings together all the view components, controllers &amp; models in context 
+&amp; scope Adds new rows when the add text button is clicked I have used - Immediately invoked 
+functions - throughout most of my code to reduce lookups I've also kept global namespace 
+polution minimal. I've also tried to keep the js code as vanilla as possible. For the 
+purpose of this task I'm referencing the count on the counter at the moment through an array 
+in the model that talks to the local json object which I would refactor to be more streamline
+by storing row value html in the JSON to retrieve from the model on load.</p>
+
+<p>Many thanks
+Ryan McLaughlin</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Simplelist maintained by <a href="https://github.com/AppBroker">AppBroker</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
